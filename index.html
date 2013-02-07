@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Responsimulator</title>
+
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="all.min.css">
+	<script type="text/javascript" src="all.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script type="text/javascript">
+    alert("Your Browser is not able to display this site correctly!");
+  </script>
+  <![endif]-->
+
+	<script> 
+    Modernizr.load([
+    {
+      // Test if Input Range is supported using Modernizr
+      test: Modernizr.inputtypes.range,
+      // If ranges are not supported, load the slider script and CSS file
+      nope: [     
+        // The slider CSS file
+        'fd-slider.mhtml.min.css'       
+        // The slider JS file
+        ,'fd-slider.min.js'     
+      ],
+      callback: function(id, testResult) {
+        // If the slider file has loaded then fire the onDomReady event        
+        if("fdSlider" in window && typeof (fdSlider.onDomReady) != "undefined") {
+            try { fdSlider.onDomReady(); } catch(err) {};
+        };
+      }
+    }
+    ]);
+  </script>
+  <script type="text/javascript" src="//use.typekit.net/hio7vrx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="mask">
+
+    <!-- iPhone Page -->
+    <div id="iphone" class="item">
+      <div class="content">
+        <div class="preview iphone">
+          <div id="width-slider-container">
+            <input id="width-slider" type="range" min="320" max="2000" step="10" title="Set fixed page width" value="320"/>
+          </div>
+          <iframe ></iframe>
+        </div>
+        <div id="headline">
+          <h2>
+            <a target="_blank" href="http://www.flexify.net">Flexify</a>
+            <span data-translation-key="presents">presents</span>
+          </h2>
+          <h1 data-translation-key="headline">See how your page looks on the iPhone</h1>
+          <form action="./" method="get">
+            <span class="prefix">http://</span>
+            <input type="text" name="url"/>
+            <input type="submit" data-translation-key="test_button" value="start test" />
+          </form>
+        </div>
+        <a href="#ipad" class="navaction" data-height="1380">
+          <img src="images/right_arrow.jpg" id="right-arrow" class="arrow"/>
+        </a>
+      </div>
+    </div>
+
+    <!-- iPad Page -->
+    <div id="ipad" class="item">
+      <div class="content">
+        <div class="preview ipad">
+          <iframe ></iframe>
+        </div>
+        <a href="#iphone" class="navaction" data-height="1150">
+          <img src="images/left_arrow.jpg" id="left-arrow" class="arrow" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div id="footer-toggle" data-translation-key="share">share this page setting</div>
+  <div class="footer-content">
+    <div id="copy-container">
+      <div id="copy-button-container">
+        <button id="copy-button" data-clipboard-target="copy-me">copy to clipboard</button>
+      </div>
+      <span>
+        <input type="text" readonly="true" id="copy-me"></span>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38325031-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
