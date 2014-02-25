@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+
+  <!-- Google Analytics Content Experiment code -->
+  <script>function utmx_section(){}function utmx(){}(function(){var
+  k='68846392-0',d=document,l=d.location,c=d.cookie;
+  if(l.search.indexOf('utm_expid='+k)>0)return;
+  function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+  indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+  length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+  '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+  '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+  '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+  valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+  '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+  </script><script>utmx('url','A/B');</script>
+  <!-- End of Google Analytics Content Experiment code -->
+
+
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:image" content="http://www.responsimulator.com/images/iphone.jpg"/>
+  <meta property="og:title" content="Responsimulator"/>
+  <meta property="og:url" content="http://www.responsimulator.com"/>
+  <meta property="og:description" content="Simulate how your web page looks on the iPhone and iPad"/>
+  <meta name="description" content="Simulate how your web page looks on the iPhone and iPad" />
+  <title>Responsimulator - Test websites on iPhone and iPad</title>
+
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="all.min.css">
+  <script type="text/javascript" src="all.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script type="text/javascript">
+    alert("Your Browser is not able to display this site correctly!");
+  </script>
+  <![endif]-->
+
+  <script> 
+    Modernizr.load([
+    {
+      // Test if Input Range is supported using Modernizr
+      test: Modernizr.inputtypes.range,
+      // If ranges are not supported, load the slider script and CSS file
+      nope: [     
+        // The slider CSS file
+        'fd-slider.mhtml.min.css'       
+        // The slider JS file
+        ,'fd-slider.min.js'     
+      ],
+      callback: function(id, testResult) {
+        // If the slider file has loaded then fire the onDomReady event        
+        if("fdSlider" in window && typeof (fdSlider.onDomReady) != "undefined") {
+            try { fdSlider.onDomReady(); } catch(err) {};
+        };
+      }
+    }
+    ]);
+  </script>
+  <script type="text/javascript" src="//use.typekit.net/hio7vrx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body>
+
+<a class="werbig" href="http://www.anrdoezrs.net/click-7392572-11478584" target="_top">
+<div>
+<span class="werbighint">Advertisement:</span> 
+SPECIAL OFFER! <span class="url">Save up to 50%</span> on Hosting Plans at godaddy.com! <span class="url">Click here to recieve your discount.</span>
+</div>
+</a>
+<img src="http://www.ftjcfx.com/image-7392572-11478584" width="1" height="1" border="0"/>  
+
+<div id="wrapper">
+  <div id="mask">
+
+    <!-- iPhone Page -->
+    <div id="iphone" class="item">
+      <div class="content">
+        <div class="preview iphone">
+          <div id="width-slider-container">
+            <input id="width-slider" type="range" min="320" max="2000" step="10" title="Set fixed page width" value="320"/>
+          </div>
+          <iframe ></iframe>
+        </div>
+        <div id="headline">
+          <h2>
+            <a target="_blank" href="http://www.flexify.net">Flexify</a>
+            <span data-translation-key="presents">presents</span>
+          </h2>
+          <h1 data-translation-key="headline">See how your page looks on the iPhone</h1>
+          <form action="./" method="get">
+            <span class="prefix">http://</span>
+            <input type="text" name="url"/>
+            <input type="submit" data-translation-key="test_button" value="start test" />
+          </form>
+        </div>
+        <a href="#ipad" class="navaction" data-height="1380">
+          <img src="images/right_arrow.jpg" id="right-arrow" class="arrow"/>
+        </a>
+      </div>
+    </div>
+    <!-- iPad Page -->
+    <div id="ipad" class="item">
+      <div class="content">
+        <div class="preview ipad">
+          <iframe ></iframe>
+        </div>
+        <a href="#iphone" class="navaction" data-height="1150">
+          <img src="images/left_arrow.jpg" id="left-arrow" class="arrow" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div id="footer-toggle" data-translation-key="share">share this page setting</div>
+  <div class="footer-content">
+    <div id="copy-container">
+      <div id="copy-button-container">
+        <button id="copy-button" data-clipboard-target="copy-me">copy to clipboard</button>
+      </div>
+      <span>
+        <input type="text" readonly="true" id="copy-me"></span>
+    </div>
+    <div id="authors">
+      Developed by <a target="_blank" href="http://twitter.com/dommmel">Dominik Heier</a>, designed by <a href="http://design-homebase.de/index.php?id=3" target="_blank">Bert Binnig</a>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38325031-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

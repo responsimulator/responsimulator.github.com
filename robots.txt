@@ -3,4 +3,8 @@ Disallow: /v1
 Disallow: /v1.html
 Disallow: /v2
 Disallow: /v2.html
+Disallow: /v3
+Disallow: /v3.html
+Disallow: /v4
+Disallow: /v4.html
 Allow: /
