@@ -26,7 +26,7 @@
 
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:image" content="http://www.responsimulator.com/images/iphone.jpg"/>
+  <meta property="og:image" content="http://www.responsimulator.com/images/ogimage.png"/>
   <meta property="og:title" content="Responsimulator"/>
   <meta property="og:url" content="http://www.responsimulator.com"/>
   <meta property="og:description" content="Simulate how your web page looks on the iPhone and iPad"/>
@@ -88,7 +88,7 @@ SPECIAL OFFER! <span class="url">Save up to 50%</span> on Hosting Plans at godad
           <div id="width-slider-container">
             <input id="width-slider" type="range" min="320" max="2000" step="10" title="Set fixed page width" value="320"/>
           </div>
-          <iframe ></iframe>
+          <iframe class="iframe"></iframe>
         </div>
         <div id="headline">
           <h2>
@@ -105,13 +105,23 @@ SPECIAL OFFER! <span class="url">Save up to 50%</span> on Hosting Plans at godad
         <a href="#ipad" class="navaction" data-height="1380">
           <img src="images/right_arrow.jpg" id="right-arrow" class="arrow"/>
         </a>
+
+        <!-- Like Button -->
+        <div id="fb">
+          <p>
+            Choosing to 'Like' Responsimulator has no side effects, so what's the worst that could happen?
+          </p>
+          <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.responsimulator.com%2F&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=1527000954191691" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+        </div>
+
       </div>
     </div>
+
     <!-- iPad Page -->
     <div id="ipad" class="item">
       <div class="content">
         <div class="preview ipad">
-          <iframe ></iframe>
+          <iframe class="iframe"></iframe>
         </div>
         <a href="#iphone" class="navaction" data-height="1150">
           <img src="images/left_arrow.jpg" id="left-arrow" class="arrow" />
