@@ -6,20 +6,6 @@
 
 <head>
 
-  <!-- Google Analytics Content Experiment code
-  <script>function utmx_section(){}function utmx(){}(function(){var
-  k='68846392-0',d=document,l=d.location,c=d.cookie;
-  if(l.search.indexOf('utm_expid='+k)>0)return;
-  function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-  indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-  length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-  '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-  '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-  '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-  valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-  '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-  </script><script>utmx('url','A/B');</script>
-  End of Google Analytics Content Experiment code -->
 
 
   <meta charset="utf-8" />
@@ -45,8 +31,13 @@
   </script>
   <![endif]-->
 
-  <script>
-    var _gaq = _gaq || [];
+  <script src="//www.google-analytics.com/cx/api.js?experiment=G1pr-UVDSbmJcv93ZyxC3g"></script>
+  <script type="text/javascript">
+    // GA expermine
+    var chosenVariation = cxApi.chooseVariation();
+  </script>
+
+  <script type="text/javascript">
     Modernizr.load([
     {
       // Test if Input Range is supported using Modernizr
@@ -74,27 +65,16 @@
 <body>
 <div id="fb-root"></div>
 
-<script>$(document).ready(function() {
-  $.ajaxSetup({ cache: true });
-  $.getScript('//connect.facebook.net/en_UK/all.js', function(){
-    FB.init({
-      appId: '715097345199661',
-      xfbml      : true
-    });     
-    FB.Event.subscribe('edge.create', function(targetUrl) {
-  		_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
-	});
-  });
-});
+<script>
 </script>
 
 
 <div class="werbig">
-<div>Choosing to 'Like' Responsimulator has no side effects, so what's the worst that could happen?
-	 <div class="fb-like" data-href="http://responsimulator.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-	</div>
+  <div> <span id="variateme">Choosing to 'Like' Responsimulator has no side effects, so what's the worst that could happen?</span>
+   <div class="fb-like" data-href="http://responsimulator.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  </div>
 </div>
-  
+
 
 <div id="wrapper">
   <div id="mask">
@@ -169,6 +149,38 @@
     ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+
+  var pageVariations = [
+    function() {},  // Original: Do nothing. This will render the default HTML.
+    function() {    // Variation 1: 
+      document.getElementById('variateme').innerHTML = "Hello, gorgeous! If you like me let me know"
+    },
+    function() {    // Variation 2: 
+      document.getElementById('variateme').innerHTML = "Thanks for going responsive. You’re making the web a better place!"
+    },
+  ];
+
+  $(document).ready(function() {
+
+    pageVariations[chosenVariation];
+
+
+    $.ajaxSetup({ cache: true });
+    $.getScript('//connect.facebook.net/en_US/all.js', function(){
+      FB.init({
+        appId: '715097345199661',
+        xfbml      : true
+      });     
+      FB.Event.subscribe('edge.create', function(targetUrl) {
+        _gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
+        _gaq.push(['_trackEvent', 'facebook', 'like', targetUrl])
+      });
+      FB.Event.subscribe('edge.remove', function(targetUrl) {
+        _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
+        _gaq.push(['_trackEvent', 'facebook', 'unlike', targetUrl])
+      });
+    });
+  });
 
 </script>
 
