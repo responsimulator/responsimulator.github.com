@@ -164,7 +164,7 @@
           link += (key.charAt(ltr))
         }
       };
-      document.getElementById('experiments').innerHTML = "<div> NEW! You can now white label this simulator. Use a custom domain & branding. <a onclick='_gaq.push([\"_trackEvent\", 'conversion\", \"mailto\"]);' href='mailto:"+link+"?subject=Whitelabelled%20Responsimulator'>Apply here</a></div>.";
+      document.getElementById('experiments').innerHTML = "<div> NEW! You can now white label this simulator. Use a custom domain & branding. <a id='whitelabel' href='mailto:"+link+"?subject=Whitelabelled%20Responsimulator'>Apply here</a></div>.";
     }//,
     // function() {    // Variation 2: 
     //   document.getElementById('variateme').innerHTML = "Thanks for going responsive. You’re making the web a better place!"
@@ -175,7 +175,10 @@
 
     // pageVariations[chosenVariation]();
     pageVariations[1]();
-
+    $('body').on('click', 'a#whitelabel',function(){
+      console.log("ahaaa");
+      _gaq.push(["_trackEvent", "conversion", "mailto"]);
+    });
 
     $.ajaxSetup({ cache: true });
     $.getScript('//connect.facebook.net/en_US/all.js', function(){
