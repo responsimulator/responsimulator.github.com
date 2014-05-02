@@ -28,11 +28,11 @@
   </script>
   <![endif]-->
 
-  <script src="//www.google-analytics.com/cx/api.js?experiment=G1pr-UVDSbmJcv93ZyxC3g"></script>
-  <script type="text/javascript">
+<!--   <script src="//www.google-analytics.com/cx/api.js?experiment=shSr0Lf8RQOisX_EKCMpfg"></script>
+<script type="text/javascript">
     // GA expermine
     var chosenVariation = cxApi.chooseVariation();
-  </script>
+  </script> -->  
 
   <script type="text/javascript">
     Modernizr.load([
@@ -150,10 +150,10 @@
   var pageVariations = [
     function() {},  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: 
-      coded = "rDwb@wnMZrwG.DMd"
-      key = "ohyfsWk2ZOYV9zmFblGwtTISUCAe4BH81n30d5gLcNEMipPqJD7KRQx6avuXrj"
-      shift=coded.length
-      link=""
+      var coded = "rDwb@wnMZrwG.DMd"
+      var key = "ohyfsWk2ZOYV9zmFblGwtTISUCAe4BH81n30d5gLcNEMipPqJD7KRQx6avuXrj"
+      var shift=coded.length
+      var link=""
       for (i=0; i<coded.length; i++) {
         if (key.indexOf(coded.charAt(i))==-1) {
           ltr = coded.charAt(i)
@@ -164,7 +164,7 @@
           link += (key.charAt(ltr))
         }
       };
-      document.getElementById('experiments').innerHTML = "<div>Get your own whitelabeled simulator. Customized on your own domain. <a onclick='_gaq.push([\"_trackEvent\", 'conversion\", \"mailto\"]);' href='mailto:"+link+"?subject=Whitelabelled%20Responsimulator'>Apply here</a></div>."
+      document.getElementById('experiments').innerHTML = "<div> NEW! You can now white label this simulator. Use a custom domain & branding. <a onclick='_gaq.push([\"_trackEvent\", 'conversion\", \"mailto\"]);' href='mailto:"+link+"?subject=Whitelabelled%20Responsimulator'>Apply here</a></div>.";
     }//,
     // function() {    // Variation 2: 
     //   document.getElementById('variateme').innerHTML = "Thanks for going responsive. You’re making the web a better place!"
@@ -173,7 +173,8 @@
 
   $(document).ready(function() {
 
-    pageVariations[chosenVariation]();
+    // pageVariations[chosenVariation]();
+    pageVariations[1]();
 
 
     $.ajaxSetup({ cache: true });
@@ -184,11 +185,12 @@
       });     
       FB.Event.subscribe('edge.create', function(targetUrl) {
         _gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
-        _gaq.push(['_trackEvent', 'facebook', 'like', targetUrl])
+        _gaq.push(['_trackEvent', 'facebook', 'like', targetUrl]);
+        _gaq.push(['_trackEvent', 'conversion', 'like']);
       });
       FB.Event.subscribe('edge.remove', function(targetUrl) {
         _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
-        _gaq.push(['_trackEvent', 'facebook', 'unlike', targetUrl])
+        _gaq.push(['_trackEvent', 'facebook', 'unlike', targetUrl]);
       });
     });
   });
