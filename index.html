@@ -5,11 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-
-
-
   <meta charset="utf-8" />
-
+  
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:image" content="http://www.responsimulator.com/images/ogimage.png"/>
@@ -69,7 +66,7 @@
 </script>
 
 
-<div class="werbig">
+<div id="experiments" class="werbig">
   <div> <span id="variateme">Choosing to 'Like' Responsimulator has no side effects, so what's the worst that could happen?</span>
    <div class="fb-like" data-href="http://responsimulator.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
   </div>
@@ -153,11 +150,25 @@
   var pageVariations = [
     function() {},  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: 
-      document.getElementById('variateme').innerHTML = "Hello, gorgeous! If you like me, let me know."
-    },
-    function() {    // Variation 2: 
-      document.getElementById('variateme').innerHTML = "Thanks for going responsive. You’re making the web a better place!"
-    },
+      coded = "rDwb@wnMZrwG.DMd"
+      key = "ohyfsWk2ZOYV9zmFblGwtTISUCAe4BH81n30d5gLcNEMipPqJD7KRQx6avuXrj"
+      shift=coded.length
+      link=""
+      for (i=0; i<coded.length; i++) {
+        if (key.indexOf(coded.charAt(i))==-1) {
+          ltr = coded.charAt(i)
+          link += (ltr)
+        }
+        else {     
+          ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+          link += (key.charAt(ltr))
+        }
+      };
+      document.getElementById('experiments').innerHTML = "<div>Get your own whitelabeled simulator. Customized on your own domain. <a onclick='_gaq.push([\"_trackEvent\", 'conversion\", \"mailto\"]);' href='mailto:"+link+"?subject=Whitelabelled%20Responsimulator'>Apply here</a></div>."
+    }//,
+    // function() {    // Variation 2: 
+    //   document.getElementById('variateme').innerHTML = "Thanks for going responsive. You’re making the web a better place!"
+    // },
   ];
 
   $(document).ready(function() {
