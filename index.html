@@ -150,21 +150,7 @@
   var pageVariations = [
     function() {},  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: 
-      var coded = "rDwb@wnMZrwG.DMd"
-      var key = "ohyfsWk2ZOYV9zmFblGwtTISUCAe4BH81n30d5gLcNEMipPqJD7KRQx6avuXrj"
-      var shift=coded.length
-      var link=""
-      for (i=0; i<coded.length; i++) {
-        if (key.indexOf(coded.charAt(i))==-1) {
-          ltr = coded.charAt(i)
-          link += (ltr)
-        }
-        else {     
-          ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
-          link += (key.charAt(ltr))
-        }
-      };
-      document.getElementById('experiments').innerHTML = "<div> NEW! You can now white label this simulator. Use a custom domain & branding. <a id='whitelabel' href='mailto:"+link+"?subject=Whitelabelled%20Responsimulator'>Apply here</a></div>.";
+      document.getElementById('experiments').innerHTML = "<div>NEW! You can now white label this simulator. <a id='whitelabel' href='http://app.responsimulator.com'>Get it while it's FREE!</a>";
     }//,
     // function() {    // Variation 2: 
     //   document.getElementById('variateme').innerHTML = "Thanks for going responsive. You’re making the web a better place!"
@@ -176,8 +162,7 @@
     // pageVariations[chosenVariation]();
     pageVariations[1]();
     $('body').on('click', 'a#whitelabel',function(){
-      console.log("ahaaa");
-      _gaq.push(["_trackEvent", "conversion", "mailto"]);
+      _gaq.push(['_trackEvent', 'conversion', 'mailto']);
     });
 
     $.ajaxSetup({ cache: true });
