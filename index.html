@@ -35,6 +35,10 @@
   </script> -->  
 
   <script type="text/javascript">
+
+    if (top.location.href != self.location.href) {
+      top.location.href = self.location.href;
+    }
     Modernizr.load([
     {
       // Test if Input Range is supported using Modernizr
