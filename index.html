@@ -35,10 +35,9 @@
   </script> -->  
 
   <script type="text/javascript">
-
-    if (top.location.href != self.location.href) {
-      top.location.href = self.location.href;
-    }
+    if (window!=window.top) { 
+      alert("Am I living in a box?");
+    };
     Modernizr.load([
     {
       // Test if Input Range is supported using Modernizr
