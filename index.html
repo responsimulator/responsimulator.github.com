@@ -21,6 +21,10 @@
   <!-- Included CSS Files -->
   <link rel="stylesheet" href="all.min.css">
   <script type="text/javascript" src="all.min.js"></script>
+  <script src="//cdn.ravenjs.com/1.1.14/jquery,native/raven.min.js"></script>
+  <script type="text/javascript">
+    Raven.config('https://5627f29c66de470b90929028ea3c67d6@app.getsentry.com/24125', {}).install();
+  </script>
 
   <!--[if lt IE 9]>
   <script type="text/javascript">
@@ -67,8 +71,7 @@
 
 
 <div id="experiments" class="werbig">
-  <div> <span id="variateme">Choosing to 'Like' Responsimulator has no side effects, so what's the worst that could happen?</span>
-   <div class="fb-like" data-href="http://responsimulator.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  <div>NEW! You can now white label this simulator. <a id='whitelabel' href='http://app.responsimulator.com'>Get it while it's FREE!</a>
   </div>
 </div>
 
@@ -148,24 +151,13 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-  var pageVariations = [
-    function() {},  // Original: Do nothing. This will render the default HTML.
-    function() {    // Variation 1: 
-      document.getElementById('experiments').innerHTML = "<div>NEW! You can now white label this simulator. <a id='whitelabel' href='http://app.responsimulator.com'>Get it while it's FREE!</a>";
-    }//,
-    // function() {    // Variation 2: 
-    //   document.getElementById('variateme').innerHTML = "Thanks for going responsive. You’re making the web a better place!"
-    // },
-  ];
 
   $(document).ready(function() {
 
-    // pageVariations[chosenVariation]();
-    pageVariations[1]();
     $('body').on('click', 'a#whitelabel',function(){
-      _gaq.push(['_trackEvent', 'conversion', 'mailto']);
+      _gaq.push(['_trackEvent', 'conversion', 'bitballoon']);
     });
-
+    /*
     $.ajaxSetup({ cache: true });
     $.getScript('//connect.facebook.net/en_US/all.js', function(){
       FB.init({
@@ -181,7 +173,7 @@
         _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
         _gaq.push(['_trackEvent', 'facebook', 'unlike', targetUrl]);
       });
-    });
+    });*/
   });
 
 </script>
